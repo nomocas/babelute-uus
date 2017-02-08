@@ -1,6 +1,6 @@
 {
   "name": "babelute-uus",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Universal Unambiguous Sentences for javascript",
   "main": "dist/bundles/index.js",
   "module": "dist/bundles/index.mjs",
