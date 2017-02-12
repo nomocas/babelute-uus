@@ -140,7 +140,7 @@ function valueToString(val, opt) {
 	switch (typeof val) {
 		case 'object':
 			if (val.__babelute__)
-				return stringify(val, opt);
+				return toUUS(val, opt);
 			if (val.forEach)
 				return (opt.beautify) ? beautyArray(val, opt) : '[' + arrayToString(val, opt) + ']';
 			return (opt.beautify) ? beautyObject(val, opt) : objectToString(val, opt);
@@ -181,7 +181,14 @@ function objectToString(obj, opt) {
  ********** end minify
  ********************************************************************/
 
-function stringify(babelute, opt = {}) {
+/**
+ * Stringify a babelute instance to UUS
+ * @param  {Babelute} babelute the babelute instance to serialize
+ * @param  {Object={}} opt      options
+ * @return {string}          the resulting UUS string
+ * @todo  manage options.pragmatics map for custom output
+ */
+function toUUS(babelute, opt = {}) {
 
 	opt.lexicScope = opt.lexicScope || [];
 
@@ -210,5 +217,5 @@ function stringify(babelute, opt = {}) {
 	return out;
 }
 
-export default stringify;
+export default toUUS;
 

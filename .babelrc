@@ -9,7 +9,7 @@
       ]
     },
     "production": {
-      
+        "plugins":["babel-plugin-unassert"]
     }
   }
 }

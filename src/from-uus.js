@@ -4,13 +4,12 @@
  * @copyright 2016 Gilles Coomans
  */
 
-import elenpi from 'elenpi/v2.js';
+import elenpi from 'elenpi';
 import babelute from 'babelute';
 
-const Lexicon = babelute.Lexicon,
-	Parser = elenpi.Parser,
+const Parser = elenpi.Parser,
 	r = elenpi.r,
-	b = Lexicon.b,
+	b = babelute.init,
 	replaceSingleString = /\\'/g,
 	replaceDoubleString = /\\"/g,
 	// grammar shortcut map (1 char previsu) for values
@@ -240,7 +239,14 @@ const Lexicon = babelute.Lexicon,
 	},
 	parser = new Parser(rules);
 
-function parse(string, opt = {}) {
+/**
+ * parse UUS string to babelute instance
+ * @param  {string} string the UUS string to parse
+ * @param  {Object={}} opt    options
+ * @return {Babelute}      the deserialized babelute instance
+ * @public
+ */
+function fromUUS(string, opt = {}) {
 	const env = {};
 	Object.assign(env, opt);
 	env.lexicons = [opt.mainLexic];
@@ -255,7 +261,7 @@ function getMethod(parent, name) {
 	return method;
 }
 
-export default parse;
+export default fromUUS;
 
 //
 

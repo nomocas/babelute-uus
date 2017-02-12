@@ -14,7 +14,7 @@
     "bundles-watch": "rollup -c -w",
     "pretest": "npm run build",
     "test": "mocha",
-    "karma": "karma start",
+    "karma": "NODE_ENV=production karma start",
     "cover": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha test/*.js",
     "prepublish": "npm test"
   },
@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/nomocas/babelute-uus#readme",
   "dependencies": {
-    "elenpi": "^0.3.2"
+    "babel-plugin-unassert": "^2.1.2"
   },
   "devDependencies": {
     "assert": "^1.4.1",
@@ -68,8 +68,9 @@
     "nyc": "^8.1.0",
     "rollup": "^0.41.4",
     "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-watch": "^3.2.2",
     "uglify-js": "^2.7.5"
   }
 }
-
