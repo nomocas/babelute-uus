@@ -5,7 +5,6 @@
 [![licence](https://img.shields.io/npm/l/babelute-uus.svg)]()
 [![dependecies](https://img.shields.io/david/nomocas/babelute-uus.svg)]()
 [![dev-dependencies](https://img.shields.io/david/dev/nomocas/babelute-uus.svg)]()
-[![npm-stats](https://nodei.co/npm/babelute-uus.png?downloads=true)]()
 
 Welcome in Sharing Era. 
 
