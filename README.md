@@ -1,5 +1,12 @@
 # babelute-uus : Universal Unambiguous (DSL) Sentences proposal
 
+[![npm](https://img.shields.io/npm/v/babelute-uus.svg)]()
+[![npm-downloads](https://img.shields.io/npm/dt/babelute-uus.svg)]()
+[![licence](https://img.shields.io/npm/l/babelute-uus.svg)]()
+[![dependecies](https://img.shields.io/david/nomocas/babelute-uus.svg)]()
+[![dev-dependencies](https://img.shields.io/david/dev/nomocas/babelute-uus.svg)]()
+[![npm-stats](https://nodei.co/npm/babelute-uus.png?downloads=true)]()
+
 Welcome in Sharing Era. 
 
 Or where a so simple idea has so deep and broad implications.
