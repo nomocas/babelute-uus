@@ -7,10 +7,8 @@
   "jsnext:main": "dist/bundles/index.mjs",
   "scripts": {
     "prebuild": "eslint src test",
-    "build": "npm run es5-build && npm run bundles-build && uglifyjs dist/bundles/index.js -m -o dist/bundles/index.min.js",
-    "es5-build": "babel src -d dist/es5",
-    "es5-watch": "babel src -d dist/es5 -w",
-    "bundles-build": "rollup -c",
+    "build": "npm run bundles-build && uglifyjs dist/bundles/index.js -m -o dist/bundles/index.min.js",
+    "bundles-build": "NODE_ENV=production rollup -c",
     "bundles-watch": "rollup -c -w",
     "pretest": "npm run build",
     "test": "mocha",
