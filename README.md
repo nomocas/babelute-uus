@@ -1,7 +1,8 @@
 # babelute-uus : Universal Unambiguous (DSL) Sentences proposal
 
+[![Travis branch](https://img.shields.io/travis/nomocas/babelute-uus/master.svg)](https://travis-ci.org/nomocas/babelute-uus)
 [![npm](https://img.shields.io/npm/v/babelute-uus.svg)]()
-[![npm-downloads](https://img.shields.io/npm/dt/babelute-uus.svg)]()
+[![npm-downloads](https://img.shields.io/npm/dm/babelute-uus.svg)]()
 [![licence](https://img.shields.io/npm/l/babelute-uus.svg)]()
 [![dependecies](https://img.shields.io/david/nomocas/babelute-uus.svg)]()
 [![dev-dependencies](https://img.shields.io/david/dev/nomocas/babelute-uus.svg)]()
