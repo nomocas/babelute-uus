@@ -1,7 +1,7 @@
 /* global describe, it */
-import 'babel-plugin-external-helpers';
+// import 'babel-plugin-external-helpers';
 import chai from 'chai';
-import babelute from 'babelute';
+import babelute from 'babelute/src/index.js';
 import toUUS from '../src/to-uus.js';
 // Babelute DSL parser
 import fromUUS from '../src/from-uus.js';
