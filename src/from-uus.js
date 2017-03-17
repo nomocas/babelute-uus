@@ -5,10 +5,10 @@
  */
 
 import elenpi from 'elenpi';
-import babelute from 'babelute';
+import babelute from 'babelute/src/index.js';
 
 const Parser = elenpi.Parser,
-	r = elenpi.r,
+	r = elenpi.Rule.initializer,
 	b = babelute.init,
 	replaceSingleString = /\\'/g,
 	replaceDoubleString = /\\"/g,
@@ -60,7 +60,7 @@ const Parser = elenpi.Parser,
 					// so pop to parent lexicon
 					env.lexicons.pop();
 					env.currentLexicon = env.lexicons[env.lexicons.length - 1];
-					babelute.__swapped__ = null;
+					delete babelute.__swapped__;
 				}
 			})
 			.space(),
@@ -102,7 +102,7 @@ const Parser = elenpi.Parser,
 					return;
 				}
 				// shortcut with first char previsu through valueMap
-				env.parser.exec(valuePrevisuMap[env.string[0]] || 'wordValue', obj, env);
+				Parser.exec(valuePrevisuMap[env.string[0]] || 'wordValue', obj, env);
 			}),
 
 		number: r.terminal(/^[0-9]+(\.[0-9]+)?/, (env, obj, cap) => {
