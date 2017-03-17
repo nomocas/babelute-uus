@@ -3,7 +3,7 @@
  * @licence MIT
  * @copyright 2016 Gilles Coomans
  */
-import bbl from 'babelute';
+import bbl from 'babelute/src/index.js';
 // serializer to Babelute DSL
 import toUUS from './to-uus.js';
 // Babelute DSL parser
