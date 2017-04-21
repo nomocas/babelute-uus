@@ -257,7 +257,7 @@ function fromUUS(string, opt = {}) {
 function getMethod(parent, name) {
 	const method = parent[name];
 	if (!method)
-		throw new Error('Babelute : no lexem found in current lexicon (' + (parent.__babelute__ || 'default') + ') with :' + name);
+		throw new Error('Babelute : no lexem found in current lexicon with : ' + name);
 	return method;
 }
 
