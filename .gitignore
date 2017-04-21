@@ -57,6 +57,7 @@ Thumbs.db
 
 .nyc_output
 doc
+.coveralls.yml
 
 
 
