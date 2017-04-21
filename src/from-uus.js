@@ -97,10 +97,10 @@ const Parser = elenpi.Parser,
 		 ***********/
 		value: r
 			.done((env, obj) => {
-				if (!env.string.length) {
-					env.error = true;
-					return;
-				}
+				// if (!env.string.length) {
+				// 	env.error = true;
+				// 	return;
+				// }
 				// shortcut with first char previsu through valueMap
 				Parser.exec(valuePrevisuMap[env.string[0]] || 'wordValue', obj, env);
 			}),
