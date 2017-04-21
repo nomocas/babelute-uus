@@ -53,7 +53,7 @@ function beautyLexems(lexems, opt) {
 			lexemsOutput.push(out);
 			lexicPushed = pushLexicScope(opt, item.lexicon, lexicPushed);
 		}
-		if (item.args) {
+		if (item.args && item.args.length) {
 			args = beautyArrayValues(removeLastUndefined(item.args), opt);
 			if ((item.args.length > 1 || (item.args[0] && item.args[0].__babelute__)) && args.length > opt.maxLength) // add EOL
 				out = item.name + '(\n\t' + args.replace(/\n/g, (s) => {
@@ -88,8 +88,8 @@ function beautyArray(arr, opt) {
 
 function beautyArrayValues(arr, opt) {
 	const len = arr.length;
-	if (!len)
-		return '';
+	// if (!len)
+	// return '';
 	const values = [];
 	let out,
 		outlength = 0;
@@ -208,7 +208,7 @@ function toUUS(babelute, opt = {}) {
 			out += '#' + item.lexicon + ':';
 			lexicPushed = pushLexicScope(opt, item.lexicon, lexicPushed);
 		}
-		out += item.name + '(' + (item.args ? arrayToString(removeLastUndefined(item.args), opt) : '') + ')';
+		out += item.name + '(' + (item.args && item.args.length ? arrayToString(removeLastUndefined(item.args), opt) : '') + ')';
 	}
 
 	if (lexicPushed)
