@@ -2,23 +2,28 @@
   "name": "babelute-uus",
   "version": "0.1.1",
   "description": "Universal Unambiguous Sentences for javascript",
-  "main": "dist/bundles/index.js",
-  "module": "dist/bundles/index.mjs",
-  "jsnext:main": "dist/bundles/index.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "jsnext:main": "dist/index.mjs",
   "scripts": {
     "prebuild": "eslint src test",
-    "build": "npm run bundles-build && uglifyjs dist/bundles/index.js -m -o dist/bundles/index.min.js",
+    "build": "npm run bundles-build && uglifyjs dist/index.js -m -o dist/index.min.js",
     "bundles-build": "NODE_ENV=production rollup -c",
     "bundles-watch": "rollup -c -w",
     "pretest": "npm run build",
     "test": "mocha",
     "karma": "NODE_ENV=production karma start",
     "cover": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha test/*.js",
-    "prepublish": "npm test"
+    "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
+    "prepublish": "npm test",
+    "release": "standard-version"
   },
   "nyc": {
     "require": [
       "babel-register"
+    ],
+    "exclude": [
+      "elenpi"
     ],
     "sourceMap": false,
     "instrument": false
@@ -43,20 +48,21 @@
   },
   "homepage": "https://github.com/nomocas/babelute-uus#readme",
   "dependencies": {
-    "elenpi": "^0.4.1",
-    "babelute": "^0.4.2"
+    "babelute": "^0.5.0",
+    "elenpi": "^0.4.1"
   },
   "devDependencies": {
     "assert": "^1.4.1",
     "babel-cli": "^6.14.0",
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-unassert": "^2.1.2",
     "babel-plugin-istanbul": "^2.0.2",
+    "babel-plugin-unassert": "^2.1.2",
     "babel-preset-es2015": "^6.14.0",
     "babel-register": "^6.14.0",
     "babelrc-rollup": "^3.0.0",
     "chai": "^3.5.0",
-    "cross-env": "^2.0.1",
+    "coveralls": "^2.13.0",
+    "cross-env": "^4.0.0",
     "eslint": "^3.15.0",
     "eslint-plugin-import": "^2.2.0",
     "karma": "^1.4.1",
@@ -64,13 +70,14 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-mocha": "^1.3.0",
     "karma-rollup-preprocessor": "^3.0.3",
-    "mocha": "^3.0.2",
-    "nyc": "^8.1.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0",
     "rollup": "^0.41.4",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-watch": "^3.2.2",
+    "standard-version": "^4.0.0",
     "uglify-js": "^2.7.5"
   }
 }
