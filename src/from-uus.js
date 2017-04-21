@@ -247,7 +247,7 @@ const Parser = elenpi.Parser,
  * @public
  */
 function fromUUS(string, opt = {}) {
-	const env = {};
+	const env = { acceptFunctions:true };
 	Object.assign(env, opt);
 	env.lexicons = [opt.mainLexic];
 	env.currentLexicon = opt.mainLexic || null;
