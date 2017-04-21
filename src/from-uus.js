@@ -4,8 +4,9 @@
  * @copyright 2016 Gilles Coomans
  */
 
+/* istanbul ignore next */
 import elenpi from 'elenpi';
-import babelute from 'babelute/src/index.js';
+import babelute from 'babelute';
 
 const Parser = elenpi.Parser,
 	r = elenpi.Rule.initializer,
