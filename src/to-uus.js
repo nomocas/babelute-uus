@@ -149,7 +149,9 @@ function valueToString(val, opt) {
 			return JSON.stringify(val); // adds quotes and escapes content
 		case 'function':
 			out = (val + '').replace(/anonymous/, '').replace(/\n\/\*\*\//, '');
+			// istanbul doesn't run ` branch because of transpilation. should be runned if used in template string friendly env. 
 			return opt.beautify ? out : out.replace(/`[^`]*`|\n\s*/g, (val) => {
+				/* istanbul ignore next */
 				return val[0] === "`" ? val : ' ';
 			});
 		default:
@@ -199,7 +201,7 @@ function toUUS(babelute, opt = {}) {
 
 	// else minifiy lexems
 	const lexems = babelute._lexems;
-	let	out = '',
+	let out = '',
 		item,
 		lexicPushed = false;
 	for (let i = 0, len = lexems.length; i < len; ++i) {
