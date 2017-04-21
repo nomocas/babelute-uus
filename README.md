@@ -1,6 +1,8 @@
 # babelute-uus : Universal Unambiguous (DSL) Sentences proposal
 
 [![Travis branch](https://img.shields.io/travis/nomocas/babelute-uus/master.svg)](https://travis-ci.org/nomocas/babelute-uus)
+[![bitHound Overall Score](https://www.bithound.io/github/nomocas/babelute-uus/badges/score.svg)](https://www.bithound.io/github/nomocas/babelute-uus)
+[![Coverage Status](https://coveralls.io/repos/github/nomocas/babelute-uus/badge.svg?branch=master)](https://coveralls.io/github/nomocas/babelute-uus?branch=master)
 [![npm](https://img.shields.io/npm/v/babelute-uus.svg)]()
 [![npm-downloads](https://img.shields.io/npm/dm/babelute-uus.svg)]()
 [![licence](https://img.shields.io/npm/l/babelute-uus.svg)]()
