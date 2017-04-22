@@ -92,9 +92,21 @@ const parsedSentence = babelute.fromUUS(string /* or string2 */);
 // parsedSentence is the same as initial sentence
 ```
 
+
+
+## Sentences as Optimal Structure Catcher
+
+Babelute's sentences could be seen (structurally) as a super set of XML with better expressivity.
+And is (much) more readable and less verbose.
+
+Main XML differences :
+- no attributes/children differenciation : everything is function or argument.
+- and as you could provide babelute sentence(s) as any argument(s) of lexems : you could easily express more complex structuration than XML tags allow (because a tag could only have one list of children).
+- namespaces are expressed in term of Lexicon
+- it is softly typed and contains more primitives than JSON (bool, number (int and float), string, null, undefined, NaN, Infinity, object, array, function and of course sentences (seen as an ADT) themselves)
+
+
 More on it soon. Mainly :
-- Why it's a super-set of JSON. 
-- Why it's a super-set of XML. 
 - Lexicon Scope Management (xml namespace equivalent)
 - Atomic and FirstLevel Form
 - UUS Form of Lexicon-Definition-Language
