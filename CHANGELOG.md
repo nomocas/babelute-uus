@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/nomocas/babelute-uus/compare/v0.2.0...v0.3.0) (2017-04-22)
+
+
+### Bug Fixes
+
+* **gitignore:** hide dist folder from git ([791485d](https://github.com/nomocas/babelute-uus/commit/791485d))
+* **karma:** lint file ([986942b](https://github.com/nomocas/babelute-uus/commit/986942b))
+
+
+### Features
+
+* **api:** add $toUUS to Babelute proto ([ff910d6](https://github.com/nomocas/babelute-uus/commit/ff910d6))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/nomocas/babelute-uus/compare/v0.1.1...v0.2.0) (2017-04-21)
 
