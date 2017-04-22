@@ -12,7 +12,12 @@ import fromUUS from './from-uus.js';
 babelute.fromUUS = fromUUS;
 babelute.toUUS = toUUS;
 
+babelute.Babelute.prototype.$toUUS = function(opt) {
+	return toUUS(this, opt);
+};
+
 export default {
 	fromUUS,
 	toUUS
 };
+
