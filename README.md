@@ -9,13 +9,96 @@
 [![dependecies](https://img.shields.io/david/nomocas/babelute-uus.svg)]()
 [![dev-dependencies](https://img.shields.io/david/dev/nomocas/babelute-uus.svg)]()
 
-Welcome in Sharing Era. 
+Babelute sentences (de)serialization.
 
-Or where a so simple idea has so deep and broad implications.
+Welcome in Sharing Era.
 
-UUS example : `#mylexic foo bar("zoo", goo())`
+UUS examples : 
+- `#my-lexic: foo() bar("zoo")`
+- `#my-lexic: foo() bar("zoo", #my-other-lexicon: goo(true) lollipop([1, 2, 3]))`
 
-More on it soon.
+or beautified :
+
+```
+#my-lexic:
+foo()
+bar("zoo", 
+	#my-other-lexicon: 
+	goo(true) 
+	lollipop([1, 2, 3])
+)
+boo({ some:true })
+```
+
+Pure Functional Host-Language Agnostic Internal DSL Form. 
+
+Much more expressive, clean and terse than JSON or XML (UUS could be seen as a super-set of both).
+
+Ok, actual Host-Language Agnosticism will be achieved when there will be UUS parser in other Host Language than javascript.
+Feel free to contribute... ;)
+
+This implementation offer :
+- Small, Clean, and Fast parser based on [elenpi](https://github.com/nomocas/elenpi) (an internal DSL for LL(1) parser generation).
+- Ultra Fast serialisation (2 or 3 times faster than equivalent JSON output).
+
+## Install
+
+```
+yarn add babelute babelute-uus
+```
+
+## Usage
+
+```javascript
+import babelute from 'babelute'; // or var babelute = require('babelute');
+import 'babelute-uus';	// or require('babelute-uus');
+
+const lexicon = babelute.createLexicon('my-lexic');
+
+lexicon.addAtoms(['foo', 'goo', 'bar', 'lollipop']);
+
+const h = lexicon.initializer();
+
+const sentence = h.foo()
+.bar("zoo", 
+	h.goo(true) 
+	.lollipop([1, 2, 3])
+)
+.boo({ some:true });
+
+/*
+ *** SERIALIZATION
+ */
+
+const string = sentence.$toUUS();
+// #my-lexic:foo()bar("zoo",goo(true)lollipop([1,2,3]))
+
+const string2 = sentence.$toUUS({ beautify:true });
+/*
+#my-lexic:
+foo()
+bar("zoo",
+	goo(true)
+	lollipop([1, 2, 3])
+)
+*/
+
+/*
+ *** DESERIALIZATION
+ */
+
+babelute.registerLexicon(lexicon); // to make it accessible globally to parser
+const parsedSentence = babelute.fromUUS(string /* or string2 */);
+// parsedSentence is the same as initial sentence
+```
+
+More on it soon. Mainly :
+- Why it's a super-set of JSON. 
+- Why it's a super-set of XML. 
+- Lexicon Scope Management (xml namespace equivalent)
+- Atomic and FirstLevel Form
+- UUS Form of Lexicon-Definition-Language
+- Sentences validation
 
 ## Licence
 
