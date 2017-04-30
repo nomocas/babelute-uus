@@ -38,7 +38,6 @@ const Parser = elenpi.Parser,
 				rule: 'lexem',
 				separator: r.terminal(/^\s*/),
 				pushTo(env, parent, obj) {
-					// Parser.counts.countLexem++;
 					if (obj.lexicon && obj.lexicon !== env.currentLexicon) { // 'scoped' lexicon management
 						if (parent.__swapped__) // we have already push something before (aka second (or more) lexicon change on same babelute)
 							env.lexicons[env.lexicons.length - 1] = obj.lexicon;
@@ -79,7 +78,6 @@ const Parser = elenpi.Parser,
 					rule: 'value',
 					separator: r.terminal(/^\s*,\s*/),
 					pushTo(env, parent, obj) {
-						// Parser.counts.countLexemValues++;
 						parent.args.push(obj.value);
 					}
 				})
@@ -87,7 +85,7 @@ const Parser = elenpi.Parser,
 			),
 
 			// lexicon selector (aka #lexicon:)
-			r.terminal(/^#([\w-_]+):/, (env, obj, cap) => { // '@' + lexicon name + ':'
+			r.terminal(/^#([\w-_]+):/, (env, obj, cap) => { // '#' + lexicon name + ':'
 				obj.lexicon = cap[1];
 			})
 		),
@@ -98,10 +96,6 @@ const Parser = elenpi.Parser,
 		 ***********/
 		value: r
 			.done((env, obj) => {
-				// if (!env.string.length) {
-				// 	env.error = true;
-				// 	return;
-				// }
 				// shortcut with first char previsu through valueMap
 				Parser.exec(valuePrevisuMap[env.string[0]] || 'wordValue', obj, env);
 			}),
@@ -144,7 +138,6 @@ const Parser = elenpi.Parser,
 				// function
 				r.one({
 					rule: 'function',
-					// previsu: 'f',
 					set(env, parent, obj) {
 						if (env.acceptFunctions) // todo : add warning when not allowed but present
 							parent.value = Function.apply(null, obj.args.concat(obj.block));
@@ -248,8 +241,7 @@ const Parser = elenpi.Parser,
  * @public
  */
 function fromUUS(string, opt = {}) {
-	const env = { acceptFunctions:true };
-	Object.assign(env, opt);
+	const env = Object.assign({ acceptFunctions:true }, opt);
 	env.lexicons = [opt.mainLexic];
 	env.currentLexicon = opt.mainLexic || null;
 	return parser.parse(string, 'babelute', b(opt.mainLexic, env.asFirstLevel), env);
