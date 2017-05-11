@@ -3,11 +3,11 @@
 [![Travis branch](https://img.shields.io/travis/nomocas/babelute-uus/master.svg)](https://travis-ci.org/nomocas/babelute-uus)
 [![bitHound Overall Score](https://www.bithound.io/github/nomocas/babelute-uus/badges/score.svg)](https://www.bithound.io/github/nomocas/babelute-uus)
 [![Coverage Status](https://coveralls.io/repos/github/nomocas/babelute-uus/badge.svg?branch=master)](https://coveralls.io/github/nomocas/babelute-uus?branch=master)
-[![npm](https://img.shields.io/npm/v/babelute-uus.svg)]()
+[![bitHound Dependencies](https://www.bithound.io/github/nomocas/babelute-uus/badges/dependencies.svg)](https://www.bithound.io/github/nomocas/babelute-uus/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/nomocas/babelute-uus/badges/devDependencies.svg)](https://www.bithound.io/github/nomocas/babelute-uus/master/dependencies/npm)
 [![npm-downloads](https://img.shields.io/npm/dm/babelute-uus.svg)]()
+[![npm](https://img.shields.io/npm/v/babelute-uus.svg)]()
 [![licence](https://img.shields.io/npm/l/babelute-uus.svg)]()
-[![dependecies](https://img.shields.io/david/nomocas/babelute-uus.svg)]()
-[![dev-dependencies](https://img.shields.io/david/dev/nomocas/babelute-uus.svg)]()
 
 Babelute sentences (de)serialization.
 
