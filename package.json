@@ -48,7 +48,7 @@
   },
   "homepage": "https://github.com/nomocas/babelute-uus#readme",
   "dependencies": {
-    "babelute": "^0.5.0",
+    "babelute": "^0.6.0",
     "elenpi": "^0.4.1"
   },
   "devDependencies": {
